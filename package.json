@@ -1,0 +1,22 @@
+{
+  "name": "postoffice",
+  "version": "0.0.1",
+  "description": "Post office work on blockchain",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "truffle compile"
+  },
+  "keywords": [
+    "blockchain"
+  ],
+  "author": "qBite",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.20",
+    "truffle": "^5.7.2",
+    "truffle-contract": "^4.0.31"
+  }
+}

@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.9;
 
-contract PackageList {
+contract Packages {
     uint public packagesCount = 0;
 
     struct Package {

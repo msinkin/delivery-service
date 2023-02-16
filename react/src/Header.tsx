@@ -1,15 +1,18 @@
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t } = useTranslation();
 
   const navigation = [
-    { name: "Частным лицам", href: "#" },
-    { name: "Бизнесу", href: "#" },
-    { name: "Интернет-магазинам", href: "#" },
-    { name: "О компании", href: "#" },
+    { name: t("forBusiness", { ns: "header" }), href: "#" },
+    { name: t("forOnlineStores", { ns: "header" }), href: "#" },
+    { name: t("about", { ns: "header" }), href: "#" },
+    { name: t("forIndividuals", { ns: "header" }), href: "#" },
   ];
 
   return (
@@ -47,9 +50,10 @@ function Header() {
             </a>
           ))}
         </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end items-center">
+            <LanguageSwitcher/>
           <a href="#" className="text-sm font-semibold leading-6 text-blue-500">
-            Вход <span aria-hidden="true">&rarr;</span>
+            {t("signIn", { ns: "header" })} <span aria-hidden="true">&rarr;</span>
           </a>
         </div>
       </nav>
@@ -92,7 +96,7 @@ function Header() {
               href="#"
               className="-mx-3 p-3 block rounded-lg hover:bg-blue-300/10 hover:text-blue-500"
             >
-              Войти через MetaMask
+              {t("signIn", { ns: "header" })}
             </a>
           </div>
         </Dialog.Panel>

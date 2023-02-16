@@ -1,7 +1,10 @@
+import { useTranslation } from "react-i18next";
 import mockup from "./assets/mockup.svg";
 //import heroBackground from "./assets/land.svg";
 
 function Hero() {
+  const { t, i18n } = useTranslation();
+
   return (
     <main>
       <div className="relative px-6 lg:px-8">
@@ -18,20 +21,18 @@ function Hero() {
             </div>
             <div className="text-center">
               <h1 className="text-6xl font-bold tracking-tight text-blue-900">
-                Сервис доставки
+                {t("title", { ns: "hero" })}
               </h1>
               <p className="mt-6 text-lg leading-8 text-blue-300">
-                Основанный на блокчейне, что гарантирует полную безопасность и
-                прозрачность системы. И ещё какой-то рекламный текст тут должен
-                быть?
+                {t("description", { ns: "hero" })}
               </p>
               <div className="mt-10 flex flex-col sm:flex-row sm:items-center gap-6">
                 <input
                   className="grow shadow-md shadow-blue-300/25 rounded-full bg-white text-blue-500 placeholder-blue-300 py-2 p-8"
-                  placeholder="Укажите номер заказа..."
+                  placeholder={t("trackInputPlaceholder", { ns: "hero" }) || ""}
                 />
                 <button className="bg-blue-500 text-white py-2 px-12 rounded-full">
-                  Отследить
+                  {t("trackButton", { ns: "hero" })}
                 </button>
               </div>
             </div>

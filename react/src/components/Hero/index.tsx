@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import mockup from "./assets/mockup.svg";
+import mockup from "@images/mockup.svg";
 //import heroBackground from "./assets/land.svg";
 
 function Hero() {

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useTranslation } from "react-i18next";
-import LanguageSwitcher from "./LanguageSwitcher";
+import LanguageSwitcher from "@components/LanguageSwitcher";
 
 function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -51,9 +51,10 @@ function Header() {
           ))}
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end items-center">
-            <LanguageSwitcher/>
+          <LanguageSwitcher />
           <a href="#" className="text-sm font-semibold leading-6 text-blue-500">
-            {t("signIn", { ns: "header" })} <span aria-hidden="true">&rarr;</span>
+            {t("signIn", { ns: "header" })}{" "}
+            <span aria-hidden="true">&rarr;</span>
           </a>
         </div>
       </nav>

@@ -3,6 +3,7 @@ import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "@components/LanguageSwitcher";
+import { Link } from "react-router-dom";
 
 function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -12,14 +13,14 @@ function Header() {
     { name: t("forBusiness", { ns: "header" }), href: "#" },
     { name: t("forOnlineStores", { ns: "header" }), href: "#" },
     { name: t("about", { ns: "header" }), href: "#" },
-    { name: t("forIndividuals", { ns: "header" }), href: "#" },
+    { name: t("forIndividuals", { ns: "header" }), href: "/career" },
   ];
 
   return (
     <div className="px-6 pt-6">
       <nav className="flex items-center justify-between" aria-label="Global">
         <div className="flex lg:flex-1">
-          <a href="#" className="flex items-center">
+          <Link to="/" className="flex items-center">
             {
               <img
                 src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
@@ -30,7 +31,7 @@ function Header() {
             <span className="self-center text-2xl font-semibold whitespace-nowrap text-blue-500">
               Лого
             </span>
-          </a>
+          </Link>
         </div>
         <button
           type="button"
@@ -41,13 +42,13 @@ function Header() {
         </button>
         <div className="hidden lg:flex lg:gap-x-12">
           {navigation.map((item) => (
-            <a
+            <Link
               key={item.name}
-              href={item.href}
+              to={item.href}
               className="text-sm leading-6 text-blue-300 hover:text-blue-500"
             >
               {item.name}
-            </a>
+            </Link>
           ))}
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end items-center">

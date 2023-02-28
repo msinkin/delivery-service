@@ -1,5 +1,6 @@
+build:
+	docker build -t website:latest .
 run:
-	docker build -t tracking:latest .
-	docker run -d -p 8080:8080 --name tracking tracking:latest
+	docker run -d -p 8080:8080 --name website website:latest
 stop:
-	docker stop tracking
+	docker stop website

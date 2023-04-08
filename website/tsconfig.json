@@ -21,7 +21,8 @@
       "@fonts/*": ["assets/fonts/*"],
       "@images/*": ["assets/images/*"],
       "@components/*": ["components/*"],
-      "@pages/*": ["pages/*"]
+      "@pages/*": ["pages/*"],
+      "@contracts/*": ["contracts/*"]
     }
   },
   "include": ["src"],

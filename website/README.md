@@ -2,13 +2,13 @@
 Следующая инструкция написана для упрощения использования docker контейнера.
 
 ### Запуск и создания контейнера вручную
-Для создания образа (``tracking:latest``):
+Для создания образа (``website:latest``):
 ```bash
-docker build -t tracking:latest .
+docker build -t website:latest .
 ```
-Последующее создания контейнера (``tracking``) на основе этого образа (``tracking:latest``):
+Последующее создания контейнера (``website``) на основе этого образа (``website:latest``):
 ```bash
-docker run -d -p 8080:8080 --name tracking tracking:latest
+docker run -d -p 8080:8080 --name website website:latest
 ```
 
 ### Автоматическое создания с помощью утилиты make

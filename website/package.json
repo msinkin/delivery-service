@@ -11,17 +11,20 @@
   "dependencies": {
     "@headlessui/react": "^1.7.10",
     "@heroicons/react": "^2.0.15",
-    "@types/node": "^18.14.0",
-    "@types/react-router-dom": "^5.3.3",
+    "@reduxjs/toolkit": "^1.9.3",
+    "ethers": "^5.7.2",
     "i18next": "^22.4.9",
     "i18next-browser-languagedetector": "^7.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^12.1.5",
+    "react-redux": "^8.0.5",
     "react-router-dom": "^6.8.1",
     "vite-tsconfig-paths": "^4.0.5"
   },
   "devDependencies": {
+    "@types/node": "^18.14.0",
+    "@types/react-router-dom": "^5.3.3",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@vitejs/plugin-react": "^3.1.0",

@@ -1,10 +1,12 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.9;
 
-
 contract Packages {
     // Информация о посылке
     struct Package {
+        address sender;
+        string from; // Откуда
+        string to; // Кула
         uint weight; // Вес
         uint worth; // Ценность
     }
@@ -17,11 +19,28 @@ contract Packages {
         Delivered // Доставлен
     }
 
+    Package[] packages;
+
+    address public owner; // Владелец контракта (Служба доставки)
+
+    modifier onlyOwner() {
+        require(msg.sender == owner, "not an owner!");
+        _;
+    }
+
+    constructor() {
+        owner = msg.sender;
+    }
+
     // Журнал доставки
-    event Delivery(string indexed track, string from, string to, Package package);
+    event Delivery(address indexed sender, uint indexed packageId, OrderStatus indexed status, uint time);
 
     function createPackage(string memory from, string memory to, uint weight, uint worth) public {
-        string memory track = "R783T455X8QD";
-        emit Delivery(track, from, to, Package(weight, worth));
+		packages.push(Package(msg.sender, from, to, weight, worth));
+        emit Delivery(msg.sender, packages.length - 1, OrderStatus.Requested, block.timestamp);
+    }
+
+    function updatePackageStatus(uint packageId, OrderStatus status) public {
+        emit Delivery(msg.sender, packageId, status, block.timestamp);
     }
 }

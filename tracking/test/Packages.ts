@@ -14,7 +14,22 @@ describe("Packages", function () {
     await packages.deployed();
   })
 
-  it("should be deployed", async function() {
+  it("deployed", async function() {
     expect(packages.address)
+  })
+
+  it("create", async function() {
+    const tx = await packages.createPackage("Краснодар", "Ульяновск", 10, 10);
+    const receipt = await tx.wait();
+    const tx2 = await packages.createPackage("Краснодар", "Ульяновск", 10, 10);
+    const receipt2 = await tx.wait();
+    const tx3 = await packages.createPackage("Краснодар", "Ульяновск", 10, 10);
+    const receipt3 = await tx.wait();
+
+    let eventFilter = packages.filters.Delivery();
+    let events = await packages.queryFilter(eventFilter);
+    for (var i = 0; i < events.length; i++) {
+      console.log(events[i].args.packageId.toNumber());
+    }
   })
 });

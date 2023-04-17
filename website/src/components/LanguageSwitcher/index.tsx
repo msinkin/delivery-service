@@ -1,9 +1,9 @@
 import { Listbox } from "@headlessui/react";
 import { ChevronUpDownIcon } from "@heroicons/react/24/outline";
-import { useState } from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-function LanguageSwitcher() {
+function LanguageSwitcher(props: React.HTMLAttributes<HTMLDivElement>) {
   const languages: any = {
     en: "English",
     ru: "Русский",
@@ -13,7 +13,7 @@ function LanguageSwitcher() {
   const [currentLanguage, setCurrentLanguage] = useState(i18n.resolvedLanguage);
 
   return (
-    <div className="w-32 z-10">
+    <div {...props}>
       <Listbox
         value={currentLanguage}
         onChange={(s) => {
@@ -22,7 +22,7 @@ function LanguageSwitcher() {
         }}
       >
         <div className="relative mt-1">
-          <Listbox.Button className="relative w-full rounded-lg bg-white py-2 pl-4 text-left shadow-md shadow-blue-300/25 text-sm">
+          <Listbox.Button className="relative w-full rounded-lg bg-white py-2 pl-4 text-left shadow-md shadow-blue-300/25 text-base">
             <span className="block text-blue-500">{languages[currentLanguage]}</span>
             <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
               <ChevronUpDownIcon
@@ -31,7 +31,7 @@ function LanguageSwitcher() {
               />
             </span>
           </Listbox.Button>
-          <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white shadow-md shadow-blue-300/25 ring-1 text-sm">
+          <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white shadow-md shadow-blue-300/25 ring-1 text-base">
             {Object.keys(languages).map((language) => (
               <Listbox.Option
                 key={language}

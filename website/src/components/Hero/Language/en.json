@@ -1,6 +1,13 @@
 {
   "title": "Delivery Service",
-  "description": "Based on the blockchain, which guarantees complete security and transparency of the system. And another something ads text should be here?",
+  "description": "Prompt delivery of parcels, documents and cargo. Optimal rates, high level of service and favorable terms of cooperation. It is based on blockchain, which guarantees you the security and transparency of the system.",
   "trackButton": "Track",
-  "trackInputPlaceholder": "Enter your track"
+  "trackInputPlaceholder": "Enter your track",
+  "sendButton": "Calculate",
+  "fromAddress": "From",
+  "toAddress": "To",
+  "searchTab": "Track",
+  "calculateTab": "Calculate",
+  "promoText": "Try a new shipping method.",
+  "promoButton": "Learn more"
 }

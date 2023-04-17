@@ -4,15 +4,18 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "@components/LanguageSwitcher";
 import { Link } from "react-router-dom";
+import ConnectWalletRedux from "@components/ConnectWallet";
+import { useAppSelector } from "hooks";
 
 function Header() {
+  const selectedAddress = useAppSelector(state => state.auth.selectedAddress);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { t } = useTranslation();
 
   const navigation = [
     { name: t("forBusiness", { ns: "header" }), href: "#" },
     { name: t("forOnlineStores", { ns: "header" }), href: "#" },
-    { name: t("about", { ns: "header" }), href: "#" },
+    { name: t("about", { ns: "header" }), href: "/about" },
     { name: t("forIndividuals", { ns: "header" }), href: "/career" },
   ];
 
@@ -38,25 +41,22 @@ function Header() {
           className="-m-4 p-4 text-blue-300 hover:text-blue-500 lg:hidden"
           onClick={() => setMobileMenuOpen(true)}
         >
-          <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+          <Bars3Icon className="h-10 w-10" aria-hidden="true" />
         </button>
         <div className="hidden lg:flex lg:gap-x-12">
           {navigation.map((item) => (
             <Link
               key={item.name}
               to={item.href}
-              className="text-sm leading-6 text-blue-300 hover:text-blue-500"
+              className="text-base leading-6 text-blue-300 hover:text-blue-500"
             >
               {item.name}
             </Link>
           ))}
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end items-center">
-          <LanguageSwitcher />
-          <a href="#" className="text-sm font-semibold leading-6 text-blue-500">
-            {t("signIn", { ns: "header" })}{" "}
-            <span aria-hidden="true">&rarr;</span>
-          </a>
+          <LanguageSwitcher className="w-32 z-10 mx-4"/>
+          { selectedAddress || <ConnectWalletRedux/> }
         </div>
       </nav>
       <Dialog as="div" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
@@ -79,7 +79,7 @@ function Header() {
               className="-m-4 p-4 text-blue-300 hover:text-blue-500"
               onClick={() => setMobileMenuOpen(false)}
             >
-              <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+              <XMarkIcon className="h-10 w-10" aria-hidden="true" />
             </button>
           </div>
           <div className="font-semibold leading-6 text-blue-300">
@@ -88,7 +88,7 @@ function Header() {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="-mx-3 p-3 block rounded-lg hover:bg-blue-300/10 hover:text-blue-500"
+                  className="text-xl -mx-3 p-4 block rounded-lg hover:bg-blue-300/10 hover:text-blue-500"
                 >
                   {item.name}
                 </a>
@@ -96,7 +96,7 @@ function Header() {
             </div>
             <a
               href="#"
-              className="-mx-3 p-3 block rounded-lg hover:bg-blue-300/10 hover:text-blue-500"
+              className="text-xl -mx-3 p-4 block rounded-lg hover:bg-blue-300/10 hover:text-blue-500"
             >
               {t("signIn", { ns: "header" })}
             </a>

@@ -9,7 +9,8 @@ module.exports = {
       'white': '#ffffff',
       'blue-300': '#819EC6',
       'blue-500': '#5278F7',
-      'blue-900': '#273C99'
+      'blue-900': '#273C99',
+      'transparent': 'transparent'
     },
     extend: {
       fontFamily: {

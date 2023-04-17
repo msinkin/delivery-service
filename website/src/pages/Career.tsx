@@ -1,6 +1,7 @@
-function Career() {
+function Career() {  
     return (
-        <div>test</div>
+      <div>
+      </div>
     )
 }
 

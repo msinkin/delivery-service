@@ -8,14 +8,19 @@ import hero_ru from "@components/Hero/Language/ru.json";
 import header_en from "@components/Header/Language/en.json";
 import header_ru from "@components/Header/Language/ru.json";
 
+import footer_en from "@components/Footer/Language/en.json";
+import footer_ru from "@components/Footer/Language/ru.json";
+
 const resources = {
   en: {
     hero: hero_en,
     header: header_en,
+    footer: footer_en
   },
   ru: {
     hero: hero_ru,
     header: header_ru,
+    footer: footer_ru
   },
 };
 

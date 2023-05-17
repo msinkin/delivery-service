@@ -1,92 +1,49 @@
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
+import FooterColumn from "./FooterColumn";
+import Logo from "@components/elements/Logo";
 
 function Footer() {
   const { t } = useTranslation();
+
+  const navigation = [
+    {
+      title: t("forIndividuals", { ns: "footer" }),
+      nav: [
+        { name: t("sendPackage", { ns: "footer" }), href: "/calc" },
+        { name: t("trackPackage", { ns: "footer" }), href: "/track" },
+        { name: t("companyPoint", { ns: "footer" }), href: "/points" }
+      ],
+    },
+    {
+      title: t("about", { ns: "footer" }),
+      nav: [
+        { name: t("companyHistory", { ns: "footer" }), href: "/history" },
+        { name: t("management", { ns: "footer" }), href: "/management" },
+        { name: t("career", { ns: "footer" }), href: "/career" },
+        { name: t("contacts", { ns: "footer" }), href: "/contacts" }
+      ],
+    },
+    {
+      title: "dsad",
+      nav: [
+        { name: t("sendPackage", { ns: "footer" }), href: "/calc" },
+        { name: t("trackPackage", { ns: "footer" }), href: "/track" },
+        { name: t("companyPoint", { ns: "footer" }), href: "/points" }
+      ]
+    }
+  ];
 
   return (
     <footer className="p-6">
       <div className="md:flex md:justify-between">
         <div className="mb-6 md:mb-0">
-          <a href="#" className="flex items-center">
-            {
-              <img
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                className="h-8 mr-2"
-                alt="Logo"
-              />
-            }
-            <span className="self-center text-2xl font-semibold whitespace-nowrap text-blue-500">
-              Лого
-            </span>
-          </a>
+          <Logo />
         </div>
         <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
-          <div>
-            <h2 className="mb-6 text-xl font-semibold text-blue-500 uppercase">
-              {t("forIndividuals", { ns: "footer" })}
-            </h2>
-            <ul className="text-blue-300 text-lg">
-              <li className="mb-4">
-                <a href="#" className="hover:underline">
-                  {t("sendPackage", { ns: "footer" })}
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:underline">
-                  {t("trackPackage", { ns: "footer" })}
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:underline">
-                  {t("companyPoint", { ns: "footer" })}
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h2 className="mb-6 text-xl font-semibold text-blue-500 uppercase">
-              {t("about", { ns: "footer" })}
-            </h2>
-            <ul className="text-blue-300 text-lg">
-              <li className="mb-4">
-                <a href="#" className="hover:underline ">
-                  {t("companyHistory", { ns: "footer" })}
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:underline">
-                  {t("management", { ns: "footer" })}
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:underline">
-                  {t("career", { ns: "footer" })}
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:underline">
-                  {t("contacts", { ns: "footer" })}
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h2 className="mb-6 text-xl font-semibold text-blue-500 uppercase">
-              Legal
-            </h2>
-            <ul className="text-blue-300 text-lg">
-              <li className="mb-4">
-                <a href="#" className="hover:underline">
-                  Privacy Policy
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:underline">
-                  Terms &amp; Conditions
-                </a>
-              </li>
-            </ul>
-          </div>
+          {navigation.map((item, index) => (
+            <FooterColumn key={index} {...item} />
+          ))}
         </div>
       </div>
       <div className="sm:flex sm:items-center sm:justify-between mt-12">

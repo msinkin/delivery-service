@@ -2,14 +2,14 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 
-import hero_en from "@components/Hero/Language/en.json";
-import hero_ru from "@components/Hero/Language/ru.json";
+import hero_en from "@components/sections/Hero/Language/en.json";
+import hero_ru from "@components/sections/Hero/Language/ru.json";
 
-import header_en from "@components/Header/Language/en.json";
-import header_ru from "@components/Header/Language/ru.json";
+import header_en from "@components/sections/Header/Language/en.json";
+import header_ru from "@components/sections/Header/Language/ru.json";
 
-import footer_en from "@components/Footer/Language/en.json";
-import footer_ru from "@components/Footer/Language/ru.json";
+import footer_en from "@components/sections/Footer/Language/en.json";
+import footer_ru from "@components/sections/Footer/Language/ru.json";
 
 const resources = {
   en: {
@@ -34,5 +34,5 @@ i18n
       escapeValue: false,
     },
   });
-
+  
 export default i18n;

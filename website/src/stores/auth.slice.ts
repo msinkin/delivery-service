@@ -44,6 +44,8 @@ export const authSlice = createSlice({
   },
 });
 
+const { initializeEthers, resetState } = authSlice.actions;
+
 export const connectWallet = createAsyncThunk<string, void, { rejectValue: string }>("auth/connectWallet", async (_, { rejectWithValue, dispatch }) => {
     const [selectedAddress] = await window.ethereum.request({
       method: "eth_requestAccounts",
@@ -71,7 +73,5 @@ export const connectWallet = createAsyncThunk<string, void, { rejectValue: strin
     }
   }
 );
-
-const { initializeEthers, resetState } = authSlice.actions;
 
 export default authSlice.reducer;

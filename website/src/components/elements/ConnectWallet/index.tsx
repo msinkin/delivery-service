@@ -1,6 +1,6 @@
 import { useAppDispatch } from "hooks";
 import { t } from "i18next";
-import { connectWallet } from "stores/authSlice";
+import { connectWallet } from "stores/auth.slice";
 
 function ConnectWallet() {
   //const networkError = useAppSelector(state => state.auth.networkError);

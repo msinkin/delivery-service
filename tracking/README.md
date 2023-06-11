@@ -11,3 +11,6 @@ REPORT_GAS=true npx hardhat test
 npx hardhat node
 npx hardhat run scripts/deploy.ts
 ```
+
+for hardhat you need nodejs 18v
+read more on https://hardhat.org/tutorial/setting-up-the-environment

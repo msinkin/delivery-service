@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "website"
+		},
+		{
+			"path": "tracking"
+		},
+		{
+			"path": "telegram-bot"
+		}
+	]
+}

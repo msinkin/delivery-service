@@ -15,16 +15,15 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "baseUrl": "src",
+    "baseUrl": ".",
     "paths": {
-      "@styles/*": ["assets/css/*"],
-      "@fonts/*": ["assets/fonts/*"],
-      "@images/*": ["assets/images/*"],
-      "@components/*": ["components/*"],
-      "@pages/*": ["pages/*"],
-      "@contracts/*": ["contracts/*"]
+      "@styles/*": ["src/assets/css/*"],
+      "@fonts/*": ["src/assets/fonts/*"],
+      "@images/*": ["src/assets/images/*"],
+      "@components/*": ["src/components/*"],
+      "@pages/*": ["src/pages/*"],
+      "@contracts/*": ["src/contracts/*"]
     }
   },
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["./src", "@types/i18n.d.ts"]
 }

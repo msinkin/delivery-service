@@ -11,18 +11,48 @@ import header_ru from "@components/sections/Header/Language/ru.json";
 import footer_en from "@components/sections/Footer/Language/en.json";
 import footer_ru from "@components/sections/Footer/Language/ru.json";
 
-const resources = {
+import alert_en from "@components/elements/Alert/Language/en.json";
+import alert_ru from "@components/elements/Alert/Language/ru.json";
+
+import contacts_en from "@pages/about/Contacts/Language/en.json";
+import contacts_ru from "@pages/about/Contacts/Language/ru.json";
+
+import management_en from "@pages/about/Management/Language/en.json";
+import management_ru from "@pages/about/Management/Language/ru.json";
+
+import calculation_en from "@pages/individuals/Calculation/Language/en.json";
+import calculation_ru from "@pages/individuals/Calculation/Language/ru.json";
+
+import pricing_en from "@pages/business/Pricing/Language/en.json";
+import pricing_ru from "@pages/business/Pricing/Language/ru.json";
+
+import pricebox_en from "@components/elements/PriceBox/Language/en.json";
+import pricebox_ru from "@components/elements/PriceBox/Language/ru.json";
+
+export const resources = {
   en: {
     hero: hero_en,
     header: header_en,
-    footer: footer_en
+    footer: footer_en,
+    alert: alert_en,
+    contacts: contacts_en,
+    managmeent: management_en,
+    calculation: calculation_en,
+    pricing: pricing_en,
+    pricebox: pricebox_en
   },
   ru: {
     hero: hero_ru,
     header: header_ru,
-    footer: footer_ru
-  },
-};
+    footer: footer_ru,
+    alert: alert_ru,
+    contacts: contacts_ru,
+    managmeent: management_ru,
+    calculation: calculation_ru,
+    pricing: pricing_ru,
+    pricebox: pricebox_ru
+  }
+} as const;
 
 i18n
   .use(LanguageDetector)

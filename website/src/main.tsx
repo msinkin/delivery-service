@@ -1,7 +1,7 @@
 import { createRoot } from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
 
-import router from "router";
+import router from "./router";
 import "./i18n";
 
 import "@styles/index.css";

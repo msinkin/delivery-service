@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.9;
+pragma solidity ^0.8.17;
 
 contract Packages {
     // Информация о посылке
@@ -35,9 +35,15 @@ contract Packages {
     // Журнал доставки
     event Delivery(address indexed sender, uint indexed packageId, OrderStatus indexed status, uint time);
 
-    function createPackage(string memory from, string memory to, uint weight, uint worth) public {
+    function createPackage(string memory from, string memory to, uint weight, uint worth) public payable {
+        require(msg.value == 1 wei, "test");
+
 		packages.push(Package(msg.sender, from, to, weight, worth));
         emit Delivery(msg.sender, packages.length - 1, OrderStatus.Requested, block.timestamp);
+    }
+
+    function getPackage(uint packageId) external view returns(Package memory) {
+        return packages[packageId];
     }
 
     function updatePackageStatus(uint packageId, OrderStatus status) public {

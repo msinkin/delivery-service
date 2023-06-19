@@ -9,5 +9,8 @@
 		{
 			"path": "telegram-bot"
 		}
-	]
+	],
+	"settings": {
+		"typescript.tsdk": "website/node_modules/typescript/lib"
+	}
 }

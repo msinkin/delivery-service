@@ -1,0 +1,11 @@
+{
+    "title": "Place a package",
+    "description": "Calculate the cost and delivery time",
+    "fromAddress": "Sender address",
+    "toAddress": "Address of the recipient",
+    "weight": "Weight",
+    "worth": "Worth",
+    "weight-placeholder": "500 g",
+    "worth-placeholder": "1000",
+    "sendButton": "Send package"
+}

@@ -4,22 +4,22 @@ import { Link } from "react-router-dom";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import { Dialog } from "@headlessui/react";
 
-import { useAppSelector } from "hooks";
 import LanguageSwitcher from "@components/elements/LanguageSwitcher";
-import ConnectWalletRedux from "@components/elements/ConnectWallet";
+import ConnectWallet from "@components/elements/ConnectWallet";
 import MobileMenu from "./MobileMenu";
 import Logo from "@components/elements/Logo";
+import { useAccount } from "wagmi";
+import Profile from "@components/elements/Profile";
 
 function Header() {
-  const selectedAddress = useAppSelector(state => state.auth.selectedAddress);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { t } = useTranslation();
+  const { t } = useTranslation("header");
+  const { connector, isConnected } = useAccount();
 
   const navigation = [
-    { name: t("forBusiness", { ns: "header" }), href: "#" },
-    { name: t("forOnlineStores", { ns: "header" }), href: "#" },
-    { name: t("about", { ns: "header" }), href: "/about" },
-    { name: t("forIndividuals", { ns: "header" }), href: "/career" },
+    { name: t("pricing" ), href: "/pricing" },
+    { name: t("contacts" ), href: "/contacts" },
+    { name: t("about" ), href: "/management" }
   ];
 
   return (
@@ -48,7 +48,7 @@ function Header() {
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end items-center">
           <LanguageSwitcher className="w-32 z-10 mx-4" />
-          {selectedAddress || <ConnectWalletRedux />}
+          {isConnected ? <Profile /> : <ConnectWallet />}
         </div>
       </nav>
       <Dialog as="div" open={mobileMenuOpen} onClose={setMobileMenuOpen}>

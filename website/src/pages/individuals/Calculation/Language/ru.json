@@ -1,0 +1,11 @@
+{
+    "title": "Оформить посылку",
+    "description": "Рассчитайте стоимость и срок доставки",
+    "fromAddress": "Адрес отправления",
+    "toAddress": "Адрес получателя",
+    "weight": "Вес",
+    "worth": "Ценность",
+    "weight-placeholder": "500 г",
+    "worth-placeholder": "1000",
+    "sendButton": "Отправить посылку"
+}

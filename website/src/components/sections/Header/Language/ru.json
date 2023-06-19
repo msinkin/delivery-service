@@ -1,7 +1,6 @@
 {
-    "forBusiness": "Бизнесу",
-    "forOnlineStores": "Интернет-магазинам",
+    "pricing": "Тарифные планы",
+    "contacts": "Обратная связь",
     "about": "О компании",
-    "forIndividuals": "Частным лицам",
     "signIn": "Войти"
 }

@@ -2,14 +2,10 @@ import { useTranslation } from "react-i18next";
 import mockup from "@images/mockup.svg";
 import HeroTabs from "./Tabs";
 import heroBackground from "@images/land.svg";
-import { useAppDispatch, useAppSelector } from "hooks";
 import Button from "@components/elements/Button";
-import { createPackage, getPacakge } from "stores/packages.slice";
 
 function Hero() {
   const { t, i18n } = useTranslation();
-  const networkError = useAppSelector(state => state.auth.selectedAddress);
-  const dispatch = useAppDispatch();
 
   return (
     <main style={{ background: `url(${heroBackground})` }}>
@@ -32,25 +28,6 @@ function Hero() {
               <p className="mt-6 text-xl leading-8 text-blue-300">
                 {t("description", { ns: "hero" })}
               </p>
-              <Button onClick={() => {
-                dispatch(
-                  createPackage({
-                    from: "Откуда",
-                    to: "Куда",
-                    weight: 10,
-                    value: 10
-                  })
-                )
-              }}>
-                Тест кнопка для создания посылки
-              </Button>
-              <Button onClick={() => {
-                dispatch(
-                  getPacakge()
-                )
-              }}>
-                для получения посылок
-              </Button>
               <HeroTabs />
             </div>
           </div>

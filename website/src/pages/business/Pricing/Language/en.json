@@ -1,0 +1,49 @@
+{
+    "title": "Prices",
+    "description": "Maximum opportunities at the lowest prices",
+    "cards": [
+        {
+            "price": "10 000",
+            "title": "Express delivery",
+            "description": "The fastest and most expensive tariff plan, which provides for the delivery of the parcel as soon as possible (for example, within 1-2 hours). Such a tariff can be especially useful if the cargo being shipped requires fast delivery.",
+            "includedFeatures": [
+                "On time or free of charge (from 1 day)",
+                "Maximum weight up to 30 kg",
+                "Insurance is free at a declared cost of up to 999 Rub",
+                "Countries: Russia"
+            ]
+        },
+        {
+            "price": "5 000",
+            "title": "Standard Delivery",
+            "description": "This tariff plan ensures delivery of the cargo within 1-2 business days. It is usually less expensive than express delivery, but still provides fast enough delivery",
+            "includedFeatures": [
+                "Unlimited",
+                "Free of charge at a declared value of up to 999 ₽, further 0.8% of the estimated value of the investment",
+                "Insurance is free at a declared cost of up to 999 Rub",
+                "Countries: Russia"
+            ]
+        },
+        {
+            "price": "1 000",
+            "title": "Economical delivery",
+            "description": "This is the cheapest tariff plan that allows you to save on the cost of delivery. However, such a tariff implies longer delivery times (for example, from 3 to 7 working days), which may be inconvenient if you need to deliver the cargo quickly",
+            "includedFeatures": [
+                "From 3 to 7 working days",
+                "Maximum weight up to 12 kg",
+                "Compulsory insurance for 3,000 rubles (the fee from the sender is 24 rubles).",
+                "Countries: Russia"
+            ]
+        },
+        {
+            "price": "12 000",
+            "title": "International delivery",
+            "description": "If you need to send cargo abroad, the delivery service can offer an international tariff plan. Such a tariff may include customs fees and other additional costs associated with the shipment of goods across the border",
+            "includedFeatures": [
+                "Maximum weight up to 31 kg",
+                "Insurance at the discretion of the sender",
+                "Countries: Russia, Belarus, Kazakhstan, Armenia, Kyrgyzstan"
+            ]
+        }
+    ]
+}

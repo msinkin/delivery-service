@@ -1,0 +1,20 @@
+{
+    "title": "Contact us",
+    "description": "Do you have a technical problem? Do you want to send feedback about a beta feature? Need information about our Business Plan? Let us know.",
+    "fullname": "Name",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Message text",
+    "fullname-placeholder": "John Smith",
+    "email-placeholder": "john.smith@gmail.com",
+    "subject-placeholder": "Topic of Discussion",
+    "message-placeholder": "Share your opinion about our work or ask us any question you are interested in",
+    "information": "Information",
+    "information-description": "If you have any questions or want to order delivery, you can contact us at the following contacts:",
+    "phone-information": "📱 Phone: +7 (999) 123-45-67",
+    "email-information": "✉️ Email: info@mydelivery.com ",
+    "clock-information": "🕒 Delivery service opening hours:",
+    "clock1": "Monday - Friday: from 9:00 AM to 10:00 PM",
+    "clock2": "Saturday - Sunday: from 10:00 AM to 08:00 PM",
+    "send": "Send"
+}

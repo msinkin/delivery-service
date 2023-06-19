@@ -18,18 +18,14 @@ function Footer() {
     {
       title: t("about", { ns: "footer" }),
       nav: [
-        { name: t("companyHistory", { ns: "footer" }), href: "/history" },
         { name: t("management", { ns: "footer" }), href: "/management" },
-        { name: t("career", { ns: "footer" }), href: "/career" },
         { name: t("contacts", { ns: "footer" }), href: "/contacts" }
       ],
     },
     {
-      title: "dsad",
+      title: t("forBusiness", { ns: "footer" }),
       nav: [
-        { name: t("sendPackage", { ns: "footer" }), href: "/calc" },
-        { name: t("trackPackage", { ns: "footer" }), href: "/track" },
-        { name: t("companyPoint", { ns: "footer" }), href: "/points" }
+        { name: t("pricing", { ns: "footer" }), href: "/pricing" }
       ]
     }
   ];

@@ -1,0 +1,24 @@
+{
+    "title": "Our team",
+    "description": "The team of energetic and talented professionals.",
+    "persons": [
+        "Konstantin Ivanov",
+        "Anna Petrova",
+        "Dmitry Sidorov",
+        "Ekaterina Kozlova",
+        "Ilya Medvedev",
+        "Maria Nikolaeva",
+        "Pavel Grigoriev",
+        "Sofya Fedorova"
+    ],
+    "posts": {
+        "chiefLogisticsOfficer": "Chief Logistics Officer",
+        "hrManager": "HR Manager",
+        "safetyManager": "Safety Manager",
+        "salesManager": "Sales Manager",
+        "marketingManager": "Marketing Manager",
+        "transportLogisticsManager": "transport Logistics Manager",
+        "customerServiceManager": "Customer Service Manager",
+        "financialManager": "Financial Manager"
+    }
+}

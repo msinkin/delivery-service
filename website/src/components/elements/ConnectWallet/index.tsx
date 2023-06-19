@@ -1,17 +1,19 @@
-import { useAppDispatch } from "hooks";
+import { useConnect } from 'wagmi'
 import { t } from "i18next";
-import { connectWallet } from "stores/auth.slice";
+import Alert from '../Alert';
 
 function ConnectWallet() {
-  //const networkError = useAppSelector(state => state.auth.networkError);
-  const dispatch = useAppDispatch();
+  const { connect, connectors, error } = useConnect()
 
   return (
-    <a href="#" className="text-base font-semibold leading-6 text-blue-500" onClick={() => dispatch(connectWallet())}>
-      {t("signIn", { ns: "header" })}{" "}
-      <span aria-hidden="true">&rarr;</span>
-    </a>
-  );
+    <div>
+      <a href="#" className="text-base font-semibold leading-6 text-blue-500" onClick={() => connect({ connector: connectors[0] })}>
+        {t("signIn", { ns: "header" })}{" "}
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <Alert error={error}/>
+    </div>
+  )
 }
 
 export default ConnectWallet;

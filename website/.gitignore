@@ -24,3 +24,6 @@ src/contracts
 *.njsproj
 *.sln
 *.sw?
+
+# wagmi
+src/generated.ts

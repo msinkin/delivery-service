@@ -7,5 +7,13 @@
     "worth": "Worth",
     "weight-placeholder": "500 g",
     "worth-placeholder": "1000",
-    "sendButton": "Send package"
+    "sendButton": "Send package",
+    "summary": "Summary",
+    "summary-description": "The total cost consist of the gas and the delivery charge.",
+    "price": "Package price:",
+    "gasPrice": "Gas price:",
+    "maxFeePerGas": "Max fee per Gas",
+    "maxPriorityFeePerGas": "Max priority fee per Gas",
+    "total": "Total price:",
+    "reciverAddress": "Reciver wallet address"
 }

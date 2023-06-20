@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { Link, useParams } from "react-router-dom";
 import { useContractRead, usePublicClient } from "wagmi";
 
-import { packagesABI, usePackagesDeliveryEvent } from "../../generated";
+import { packagesABI, usePackagesDeliveryEvent, usePackagesGetPackage, usePackagesOwner } from "../../generated";
 import { Token } from "@contracts/contract-address.json"
 import { BaseError, getContract } from "viem";
 import TimelineElement from "@components/elements/Timeline/TimelineElement";
@@ -49,20 +49,20 @@ function Track() {
                 })
 
                 const filter = await contract.createEventFilter.Delivery({
-                    packageId: BigInt(trackNumber)
+                    packageId: [BigInt(trackNumber)]
                 }, {
-                    fromBlock: 0n,
-                    toBlock: 30n
+                    fromBlock: 0n
                 });
 
                 const changes = await publicClient.getFilterLogs({ filter });
 
                 var ar = changes[0];
 
-                console.log(changes);
-
-                if (ar && ar.args.packageId)
-                    setPkg(await contract.read.getPackage([ar.args.packageId]));
+                if (ar) {
+                    let _pkg = await contract.read.getPackage([ar.args.packageId || 0n]);
+                    setPkg(_pkg);
+                    console.log(_pkg);
+                }
 
                 setHistory(changes.map((change) => change.args as PackageEvent));
             } catch (e: any) {

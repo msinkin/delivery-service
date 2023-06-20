@@ -7,5 +7,13 @@
     "worth": "Ценность",
     "weight-placeholder": "500 г",
     "worth-placeholder": "1000",
-    "sendButton": "Отправить посылку"
+    "sendButton": "Отправить посылку",
+    "summary": "Общая цена",
+    "summary-description": "Общая стоимость включает газ и стоимость доставки.",
+    "price": "Цена за посылку;",
+    "gasPrice": "Цена на газ:",
+    "maxFeePerGas": "Максимальная плата за Газ:",
+    "maxPriorityFeePerGas": "Плата за приоритет на Газ",
+    "total": "Итоговая цена:",
+    "reciverAddress": "Адрес кошелька получателя"
 }

@@ -7,5 +7,15 @@
     "weight": "Weight",
     "worth": "Worth",
     "updateStatus": "Update status",
-    "verify": "Verify"
+    "verify": "Verify",
+    "created": "Created",
+    "collecting": "Collecting the order",
+    "ontheway": "On the way",
+    "delivered": "Delivered",
+    "recived": "Received",
+    "desc1": "The order is paid and awaiting processing",
+    "desc2": "Collecting the order",
+    "desc3": "Delivered",
+    "desc4": "The courier delivered the order",
+    "desc5": "The recipient confirmed the order"
 }

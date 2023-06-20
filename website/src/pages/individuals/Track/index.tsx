@@ -83,19 +83,19 @@ function Track() {
     }, [trackNumber])
 
     const orderStatus = [
-        "Создано",
-        "Собираем заказ",
-        "В пути",
-        "Доставлен",
-        "Получен"
+        t("created"),
+        t("collecting"),
+        t("ontheway"),
+        t("delivered"),
+        t("recived")
     ]
 
     const descriptions = [
-        "Заказ оплачен и ожидает обработки",
-        "Собираем заказ",
-        "Передано в доставку",
-        "Курьер доставил заказ",
-        "Получатель подтвердил заказ"
+        t("desc1"),
+        t("desc2"),
+        t("desc3"),
+        t("desc4"),
+        t("desc5")
     ]
 
     return (
@@ -160,10 +160,10 @@ function Track() {
                             {address === pkg?.deliveryman &&
                                 <>
                                     <Dropdown values={[
-                                        "Создано",
-                                        "Собираем заказ",
-                                        "В пути",
-                                        "Доставлен",
+                                        t("created"),
+                                        t("collecting"),
+                                        t("ontheway"),
+                                        t("delivered"),
                                     ]} selecred={[status, setStatus]} />
                                     <Button onClick={() => {
                                         if (trackNumber)
@@ -185,7 +185,7 @@ function Track() {
                     </div>
                 </div>
             }
-            
+
             <Alert title={t("error", { ns: "alert" })} text={error?.message || packageStatus.error?.message || verifyPacakge.error?.message} />
         </div>
     )

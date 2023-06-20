@@ -14,8 +14,9 @@ function Pricing() {
                     </p>
                 </div>
                 {
-                    t("cards", { returnObjects: true }).map((card) =>
+                    t("cards", { returnObjects: true }).map((card, index) =>
                         <PriceBox
+                            key={index}
                             price={card.price}
                             title={card.title}
                             description={card.description}

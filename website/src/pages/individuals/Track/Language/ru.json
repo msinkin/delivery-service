@@ -1,0 +1,11 @@
+{
+    "info": "Информация",
+    "info-description": "",
+    "sender": "Отправитель",
+    "reciver": "Получатель",
+    "deliveryman": "Доставщик",
+    "weight": "Вес",
+    "worth": "Ценность",
+    "updateStatus": "Обновить статус",
+    "verify": "Подтвердить получение"
+}

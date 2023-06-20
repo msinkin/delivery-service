@@ -29,6 +29,12 @@ import pricing_ru from "@pages/business/Pricing/Language/ru.json";
 import pricebox_en from "@components/elements/PriceBox/Language/en.json";
 import pricebox_ru from "@components/elements/PriceBox/Language/ru.json";
 
+import points_en from "@pages/individuals/Points/Language/en.json";
+import points_ru from "@pages/individuals/Points/Language/ru.json";
+
+import track_en from "@pages/individuals/Track/Language/en.json";
+import track_ru from "@pages/individuals/Track/Language/ru.json";
+
 export const resources = {
   en: {
     hero: hero_en,
@@ -39,7 +45,9 @@ export const resources = {
     managmeent: management_en,
     calculation: calculation_en,
     pricing: pricing_en,
-    pricebox: pricebox_en
+    pricebox: pricebox_en,
+    points: points_en,
+    track: track_en
   },
   ru: {
     hero: hero_ru,
@@ -50,7 +58,9 @@ export const resources = {
     managmeent: management_ru,
     calculation: calculation_ru,
     pricing: pricing_ru,
-    pricebox: pricebox_ru
+    pricebox: pricebox_ru,
+    points: points_ru,
+    track: track_ru
   }
 } as const;
 

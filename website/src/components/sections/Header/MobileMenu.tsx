@@ -5,14 +5,13 @@ import { useTranslation } from "react-i18next";
 import Logo from "@components/elements/Logo";
 
 function MobileMenu({ setMobileMenuOpen }: { setMobileMenuOpen: Dispatch<SetStateAction<boolean>> }) {
-    const { t } = useTranslation();
+    const { t } = useTranslation("header");
 
     const navigation = [
-        { name: t("forBusiness", { ns: "header" }), href: "#" },
-        { name: t("forOnlineStores", { ns: "header" }), href: "#" },
-        { name: t("about", { ns: "header" }), href: "/about" },
-        { name: t("forIndividuals", { ns: "header" }), href: "/career" },
-    ];
+        { name: t("pricing" ), href: "/pricing" },
+        { name: t("contacts" ), href: "/contacts" },
+        { name: t("about" ), href: "/management" }
+      ];
 
     return (
         <Dialog.Panel className="fixed inset-0 z-10 bg-white p-6 lg:hidden font-noto">
@@ -42,7 +41,7 @@ function MobileMenu({ setMobileMenuOpen }: { setMobileMenuOpen: Dispatch<SetStat
                     href="#"
                     className="text-xl -mx-3 p-4 block rounded-lg hover:bg-blue-300/10 hover:text-blue-500"
                 >
-                    {t("signIn", { ns: "header" })}
+                    {t("signIn")}
                 </a>
             </div>
         </Dialog.Panel>

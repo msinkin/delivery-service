@@ -46,6 +46,7 @@ function Footer() {
         <span className="text-lg text-blue-300 sm:text-center dark:text-gray-400">
           {t("copyright", { ns: "footer" })}
         </span>
+        {/*
         <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
           <a href="#" className="text-blue-300 hover:text-blue-500">
             <svg
@@ -119,6 +120,7 @@ function Footer() {
             <span className="sr-only">Dribbbel account</span>
           </a>
         </div>
+        */}
       </div>
     </footer>
   );

@@ -2,13 +2,14 @@ import Button from "@components/elements/Button";
 import Textbox from "@components/elements/Textbox";
 import { useTranslation } from "react-i18next";
 import { useSearchParams } from "react-router-dom";
-import { useContractWrite, useFeeData } from "wagmi";
+import { useContractWrite, useFeeData, useWaitForTransaction } from "wagmi";
 import { abi } from "@contracts/Packages.json";
 import { Token } from "@contracts/contract-address.json"
 import { parseEther, parseGwei } from "viem";
 import Alert from "@components/elements/Alert";
 import { useState } from "react";
 import BigDecimal from "./bigdecimal";
+import { packagesABI, usePackagesCreatePackage, usePreparePackagesCreatePackage } from "src/generated";
 
 function CalculationPage() {
     let [searchParams] = useSearchParams();
@@ -22,16 +23,20 @@ function CalculationPage() {
 
     const { t } = useTranslation("calculation");
 
-    const { data } = useFeeData();
-    const { error, write } = useContractWrite({
-        address: Token as `0x${string}`,
-        abi: abi,
-        functionName: 'createPackage'
+    const fee = useFeeData();
+
+    const packageCreate = usePackagesCreatePackage();
+
+    const waitForTransaction = useWaitForTransaction({
+        hash: packageCreate.data?.hash,
+        onSettled(data, error) {
+            console.log(data);
+        }
     })
 
     function calculate({ _weight, _worth }: { _weight?: string, _worth?: string }) {
         let value = (BigInt(_weight || weight) * parseEther("0.0006")) + (BigInt(_worth || worth) * parseEther("0.0006"));
-        let total = value + (data?.gasPrice || 0n);
+        let total = value + (fee.data?.gasPrice || 0n);
 
         setPrice({
             value,
@@ -49,14 +54,14 @@ function CalculationPage() {
                 <div className="space-y-8">
                     <Textbox
                         label={t("fromAddress")}
-                        for="fromAddress"
+                        htmlFor="fromAddress"
                         value={from}
                         required
                         onChange={(e) => { setFrom(e.target.value); }}
                     />
                     <Textbox
                         label={t("toAddress")}
-                        for="toAddress"
+                        htmlFor="toAddress"
                         value={to}
                         required
                         onChange={(e) => { setTo(e.target.value); }}
@@ -66,7 +71,7 @@ function CalculationPage() {
                             <Textbox
                                 label={t("weight")}
                                 placeholder={t("weight-placeholder")}
-                                for="weight"
+                                htmlFor="weight"
                                 value={weight}
                                 required
                                 onChange={(e) => { setWeight(e.target.value); calculate({ _weight: e.target.value }) }}
@@ -76,7 +81,7 @@ function CalculationPage() {
                             <Textbox
                                 label={t("worth")}
                                 placeholder={t("worth-placeholder")}
-                                for="worth"
+                                htmlFor="worth"
                                 value={worth}
                                 required
                                 onChange={(e) => { setWorth(e.target.value); calculate({ _worth: e.target.value }) }}
@@ -85,7 +90,7 @@ function CalculationPage() {
                     </div>
                     <Textbox
                         label={t("reciverAddress")}
-                        for="reciverAddress"
+                        htmlFor="reciverAddress"
                         value={reciver}
                         required
                         onChange={(e) => { setReciver(e.target.value); }}
@@ -103,15 +108,15 @@ function CalculationPage() {
                     </div>
                     <div className="flex justify-between">
                         <p>{t("gasPrice")}</p>
-                        <p className="font-bold text-blue-900">{data?.formatted.gasPrice} gwei</p>
+                        <p className="font-bold text-blue-900">{fee.data?.formatted.gasPrice} gwei</p>
                     </div>
                     <div className="flex justify-between">
                         <p>{t("maxFeePerGas")}</p>
-                        <p className="font-bold text-blue-900">{data?.formatted.maxFeePerGas} gwei</p>
+                        <p className="font-bold text-blue-900">{fee.data?.formatted.maxFeePerGas} gwei</p>
                     </div>
                     <div className="flex justify-between">
                         <p>{t("maxPriorityFeePerGas")}</p>
-                        <p className="font-bold text-blue-900">{data?.formatted.maxPriorityFeePerGas} gwei</p>
+                        <p className="font-bold text-blue-900">{fee.data?.formatted.maxPriorityFeePerGas} gwei</p>
                     </div>
                 </div>
                 <hr className="border-blue-300 border-dashed" />
@@ -121,13 +126,13 @@ function CalculationPage() {
                 </div>
                 <Button onClick={() => {
                     if (weight && worth)
-                        write({
+                        packageCreate.write({
                             value: price?.value,
-                            args: [reciver, from, to, weight, worth]
+                            args: [reciver as `0x${string}`, from, to, BigInt(weight), BigInt(worth)]
                         });
                 }}>{t("sendButton")}</Button>
             </div>
-            <Alert title={t("error", { ns: "alert" })} text={error?.message} />
+            <Alert title={t("error", { ns: "alert" })} text={packageCreate.error?.message} />
         </div>
     )
 }

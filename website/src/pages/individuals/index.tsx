@@ -1,4 +1,5 @@
 import Calculation from "./Calculation";
+import Packages from "./Packages";
 import Points from "./Points";
 import Track from "./Track";
 
@@ -19,4 +20,8 @@ export default [
         path: "/points",
         element: <Points />
     },
+    {
+        path: "/packages",
+        element: <Packages />
+    }
 ];

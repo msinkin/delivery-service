@@ -77,6 +77,7 @@ function Management() {
                 <div className="grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                     {persons.map((person, index) =>
                         <Person
+                            key={index}
                             name={person.name}
                             post={person.post}
                             avatar={person.avatar}

@@ -14,28 +14,28 @@ function Contacts() {
                 <form action="mailto:info@mydelivery.com" method="get" encType="text/plain" className="space-y-8">
                     <Textbox
                         label={t("fullname") || ""}
-                        for="name"
+                        htmlFor="name"
                         name="fullname"
                         placeholder={t("fullname-placeholder") || ""}
                         required
                     />
                     <Textbox
                         label={t("email") || ""}
-                        for="email"
+                        htmlFor="email"
                         name="email"
                         placeholder={t("email-placeholder") || ""}
                         required
                     />
                     <Textbox
                         label={t("subject") || ""}
-                        for="subject"
+                        htmlFor="subject"
                         name="subject"
                         placeholder={t("subject-placeholder") || ""}
                         required
                     />
                     <Textarea
                         label={t("message") || ""}
-                        for="message"
+                        htmlFor="message"
                         name="body"
                         placeholder={t("message-placeholder") || ""}
                     />
